@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWAT | إدارة القطاع</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      <div><strong>SWAT</strong><span>إدارة القطاع</span></div>
+    </div>
+    <nav>
+      <button class="nav-btn active" data-page="dashboard">الرئيسية</button>
+      <button class="nav-btn" data-page="ranks">الرتب والمناصب</button>
+      <button class="nav-btn" data-page="complaints">الشكاوى</button>
+      <button class="nav-btn" data-page="permissions">الصلاحيات</button>
+    </nav>
+    <div class="sidebar-footer">نظام إدارة قطاع SWAT<br><small>الإصدار التجريبي 1.0</small></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1 id="pageTitle">لوحة القيادة</h1>
+        <p>إدارة أفراد وضباط قطاع SWAT</p>
+      </div>
+      <div class="user-box">
+        <span class="status-dot"></span>
+        <div><strong>مسؤول الشؤون</strong><small>صلاحية كاملة</small></div>
+      </div>
+    </header>
+
+    <section id="dashboard" class="page active">
+      <div class="hero">
+        <div><span class="eyebrow">SPECIAL WEAPONS AND TACTICS</span><h2>مرحبًا بك في نظام إدارة قطاع SWAT</h2><p>منصة موحدة للترقيات والتنزيلات والمناصب والشكاوى والصلاحيات.</p></div>
+        <div class="shield">SWAT</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>إجمالي الأفراد</span><b>128</b><small>+8 هذا الشهر</small></div>
+        <div class="stat"><span>الضباط</span><b>24</b><small>4 مناصب قيادية</small></div>
+        <div class="stat"><span>الشكاوى المفتوحة</span><b>7</b><small>تحتاج للمراجعة</small></div>
+        <div class="stat"><span>الترقيات هذا الشهر</span><b>19</b><small>آخر تحديث اليوم</small></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h3>آخر الإجراءات</h3><button class="ghost">عرض الكل</button></div>
+          <div class="activity"><b>ترقية</b><span>تمت ترقية العريف فهد إلى وكيل رقيب</span><time>منذ 12 دقيقة</time></div>
+          <div class="activity"><b>شكوى</b><span>شكوى جديدة على أحد الأفراد</span><time>منذ 31 دقيقة</time></div>
+          <div class="activity"><b>صلاحية</b><span>تم تحديث صلاحيات نائب قائد القطاع</span><time>منذ ساعة</time></div>
+        </div>
+        <div class="card quick">
+          <div class="card-head"><h3>إجراءات سريعة</h3></div>
+          <button data-page="ranks">إدارة الرتب والترقيات</button>
+          <button data-page="complaints">فتح لوحة الشكاوى</button>
+          <button data-page="permissions">إدارة الصلاحيات</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="ranks" class="page">
+      <div class="section-head"><div><h2>الرتب والمناصب</h2><p>إدارة الرتب العسكرية وترقيات الأفراد.</p></div><button class="primary">+ إضافة فرد</button></div>
+      <div class="filters"><input id="rankSearch" placeholder="ابحث بالاسم أو الرتبة..."><select><option>كل الرتب</option><option>جندي</option><option>عريف</option><option>وكيل رقيب</option><option>رقيب</option><option>ضابط</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>الفرد</th><th>الرتبة</th><th>المنصب</th><th>الحالة</th><th>الإجراءات</th></tr></thead>
+      <tbody id="rankTable">
+        <tr><td><strong>فهد العتيبي</strong><small>SW-1024</small></td><td>وكيل رقيب</td><td>قائد وحدة</td><td><span class="badge green">نشط</span></td><td><button class="small-btn promote">ترقية</button><button class="small-btn danger demote">تنزيل</button></td></tr>
+        <tr><td><strong>سلمان القحطاني</strong><small>SW-1088</small></td><td>رقيب</td><td>فرد ميداني</td><td><span class="badge green">نشط</span></td><td><button class="small-btn promote">ترقية</button><button class="small-btn danger demote">تنزيل</button></td></tr>
+        <tr><td><strong>ناصر الحربي</strong><small>SW-1102</small></td><td>عريف</td><td>فرد ميداني</td><td><span class="badge yellow">إجازة</span></td><td><button class="small-btn promote">ترقية</button><button class="small-btn danger demote">تنزيل</button></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section id="complaints" class="page">
+      <div class="section-head"><div><h2>الشكاوى</h2><p>الشكاوى الواردة من الأفراد والضباط ومتابعة حالتها.</p></div><button class="primary" id="newComplaint">+ شكوى جديدة</button></div>
+      <div class="complaint-grid">
+        <div class="complaint-card urgent"><span class="badge red">عالية</span><h3>شكوى على فرد</h3><p>رقم الشكوى: #SW-2041</p><div><b>الحالة:</b> قيد المراجعة</div><button class="small-btn">فتح الشكوى</button></div>
+        <div class="complaint-card"><span class="badge yellow">متوسطة</span><h3>شكوى إدارية</h3><p>رقم الشكوى: #SW-2038</p><div><b>الحالة:</b> بانتظار الإجراء</div><button class="small-btn">فتح الشكوى</button></div>
+        <div class="complaint-card"><span class="badge green">منخفضة</span><h3>ملاحظة على ضابط</h3><p>رقم الشكوى: #SW-2031</p><div><b>الحالة:</b> تمت المعالجة</div><button class="small-btn">عرض التفاصيل</button></div>
+      </div>
+    </section>
+
+    <section id="permissions" class="page">
+      <div class="section-head"><div><h2>الصلاحيات</h2><p>تحديد صلاحيات المناصب القيادية داخل النظام.</p></div></div>
+      <div class="permission-grid">
+        <div class="permission-card"><h3>قائد القطاع</h3><span class="badge green">صلاحية كاملة</span><label><input type="checkbox" checked> الترقيات</label><label><input type="checkbox" checked> التنزيلات</label><label><input type="checkbox" checked> إدارة الشكاوى</label><label><input type="checkbox" checked> إدارة الصلاحيات</label></div>
+        <div class="permission-card"><h3>نائب قائد القطاع</h3><span class="badge green">صلاحية كاملة</span><label><input type="checkbox" checked> الترقيات</label><label><input type="checkbox" checked> التنزيلات</label><label><input type="checkbox" checked> إدارة الشكاوى</label><label><input type="checkbox" checked> إدارة الصلاحيات</label></div>
+        <div class="permission-card"><h3>مسؤول الشؤون</h3><span class="badge green">صلاحية كاملة</span><label><input type="checkbox" checked> الترقيات</label><label><input type="checkbox" checked> التنزيلات</label><label><input type="checkbox" checked> إدارة الشكاوى</label><label><input type="checkbox" checked> إدارة الصلاحيات</label></div>
+        <div class="permission-card"><h3>MTT</h3><span class="badge yellow">صلاحيات محددة</span><label><input type="checkbox" checked> تنفيذ الترقيات</label><label><input type="checkbox" checked> تنفيذ التنزيلات</label><label><input type="checkbox"> إدارة الشكاوى</label><label><input type="checkbox"> إدارة الصلاحيات</label></div>
+      </div>
+    </section>
+  </main>
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
